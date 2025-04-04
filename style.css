@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+/* resubale class and id start */
+.container{
+    max-width: 1440px;
+}
+
+/* resubale class and id End */
+
+/* nav section start */
+
+/* nav section End */
+
+/* main section start */
+
+
+/* main section start */
