@@ -12,6 +12,7 @@ html,body{
 /* resubale class and id start */
 .container{
     max-width: 1440px;
+    width:100%;
 }
 
 /* resubale class and id End */
