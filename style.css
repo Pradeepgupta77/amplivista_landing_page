@@ -136,12 +136,82 @@ transition: all ease-in 0.3;
 #hero {
     box-shadow:
       inset 0 20px 30px -10px rgba(0, 0, 0, 0.1),  /* top shadow */
-      inset 0 -20px 30px -10px rgba(0, 0, 0, 0.1); 
-      height: 80vh;
+      inset 0 -20px 30px -10px rgba(0, 0, 0, 0.1)
+    ; 
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#hero .hero_con{
+    max-width: 1240px;
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+}
+.hero_con .hero_left{
+    height: 100%;
+    width: 49%;
+    /* background-color: yellow; */
 
-  }
-  
-  
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.hero_left h1{
+    font-family: "Poppins", sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 1;
+}
+.hero_left h1 span{
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+/* .hero_left h1 span::nth-last-child{
+    margin-top: -50px;
+} */
+.hero_left p{
+    font-family: "Poppins", sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.1;
+}
+.hero_left ul li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+    margin-top: 10px;
+}
+.hero_left .hero_left_btn_con{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    margin-top: 30px;
+}
+.hero_left_btn_con button{
+    
+}
+.hero_left_btn_con button a{
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.hero_con .hero_right{
+    height: 100%;
+    width: 49%;
+}
 /*hero section  end */
 
 /* main section start */
