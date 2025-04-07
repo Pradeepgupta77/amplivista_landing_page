@@ -198,7 +198,19 @@ transition: all ease-in 0.3;
     margin-top: 30px;
 }
 .hero_left_btn_con button{
-
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    transition: all ease-in 0.3s;
+}
+.hero_left_btn_con button:hover{
+    transform: translateY(-5px);
+}
+.hero_left_btn_con button:nth-last-child(2){
+    background-color: #ff7a28;
+}
+.hero_left_btn_con button:nth-last-child(1){
+    background-color: #7712b1;
 }
 .hero_left_btn_con button a{
     text-decoration: none;
@@ -206,6 +218,8 @@ transition: all ease-in 0.3;
     font-size: 16px;
     font-weight: 600;
     line-height: 1.1;
+    text-transform: uppercase;
+    color: white;
 }
 
 .hero_con .hero_right{
