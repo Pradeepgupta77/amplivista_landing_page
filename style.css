@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -10,10 +11,10 @@ html,body{
 }
 
 /* resubale class and id start */
-.container{
+/* .container{
     max-width: 1440px;
     width:100%;
-}
+} */
 
 /* resubale class and id End */
 
@@ -23,5 +24,97 @@ html,body{
 
 /* main section start */
 
+/* Section 2 start */
+#section_2 {
+    padding: 50px 30px;
+    background: #fff;
+}
+
+#section_2 .container {
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.sec_2_first_cont {
+    text-align: left;
+    margin-bottom: 40px;
+    width: 32%;
+}
+
+#sec_2_heading {
+    font-size: 40px;
+    font-family: "poppins", sans-serif;
+    font-weight: 700;
+    text-align: left;
+    line-height: 1.3;
+}
+
+#sec_2_first-cont_p {
+    font-size: 18px;
+    text-align: left;
+    font-family: "poppins", sans-serif;
+    border-left: 5px solid #ff7a28;
+}
+
+#sec_2_first-cont_p .highlight {
+    font-weight: 600;
+    color: #000;
+    margin-left: 25px;
+    display: inline-block;
+}
+
+.sec_2_features {
+    background-color: #fff;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    padding: 25px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    width: 32%;
+    min-height: 240px;
+}
+
+.sec_2_features:hover {
+    transform: translateY(-5px);
+}
+
+.icon_container {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.icon_container img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.sec_2_features h3 {
+    font-size: 20px;
+    color: #000;
+    font-weight: 600;
+    font-family: "poppins", sans-serif;
+    margin-top: 15px;
+    line-height: 1.3;
+}
+
+.sec_2_features p {
+    font-size: 16px;
+    color: #000;
+    font-family: "poppins", sans-serif;
+    font-weight: 400;
+    line-height: 1.3rem;
+    margin-top: 5px;
+}
+/* Section 2 end */
 
 /* main section start */
