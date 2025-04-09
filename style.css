@@ -303,9 +303,7 @@ body {
   padding: 50px 30px;
   background-color: #f4f4f4;
 }
-#our_client .our_client_con {
-  /* background-color: red; */
-}
+
 .slider_con {
   display: flex;
   gap: 20px;
@@ -379,9 +377,7 @@ body {
   padding: 50px 30px;
   background-color: #F4F4F4;
 }
-#cash_study .cash_study_con{
-  /* background-color: yellow; */
-}
+
 .cash_study_con .cash{
   width: 100%;
   margin-top: 50px;
