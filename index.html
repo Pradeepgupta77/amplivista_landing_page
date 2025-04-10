@@ -910,7 +910,7 @@
           on the most interesting things
         </h3>
         <form id="subscribe" >
-          <input type="email" placeholder="Enter your email address" required />
+          <input id="subscribeEmail" type="email" placeholder="Enter your email address" required />
           <button type="submit">SUBSCRIBE NOW!</button>
         </form>
       </div>
@@ -1022,6 +1022,8 @@
     <!-- footer section End -->
 
     <!-- js file -->
+
+    
        <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
       import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
@@ -1098,56 +1100,28 @@
           alert("Something went wrong. Check console.");
         }
       });
-      // qucik form submit start
-    </script>
+      // Contact form submit start
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-      emailjs.init("czap2_pd0IMo5f_Lu"); // Replace with your actual Public Key
-    </script>
-
-    <script>
-       <!-- abc  -->
-    
-       const emailquickForm = document.getElementById('hero_quickform');
-       emailquickForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  // const name = document.getElementById('name').value;
-  // const email = document.getElementById('email').value;
-  // const phone = document.getElementById('phone').value;
-  // const message = document.getElementById('message').value;
-  // const service = document.getElementById('service').value;
-  // const time = new Date().toLocaleString(); // human-readable timestamp
-
-  try {
-    // // 1 Save to Firebase Firestore
-    // await addDoc(collection(db, "contacts"), {
-    //   quickName,
-    //   quickEmail,
-    //   quickPhone,
-    //   quickMessage,
-    // });
-
-    // 2️ Send Email via EmailJS
-    await emailjs.send("service_sc2upss", "template_992f4lx", {
-      quickName,
-            quickEmail,
-            quickPhone,
-            quickMessage,
-    });
-
-    alert("Form submitted successfully! We'll get back to you shortly.");
-    emailquickForm.reset();
-  } catch (err) {
-    console.error("Error:", err);
-    alert("Something went wrong. Please try again.");
-  }
-});
-    // <!-- abc  -->
-
-    </script>
-
+      // subscribe form submit start
+      const subscribe = document.getElementById('subscribe');
+      subscribe.addEventListener('submit', async (e) => {
+        e.preventDefault();
+  
+        const subscribeEmail = document.getElementById('subscribeEmail').value;  
+        try {
+          await addDoc(collection(db, "landing-page-subscribe-form"), {
+            subscribeEmail,
+            timestamp: new Date()
+          });
+          alert("Form submitted successfully!");
+          subscribe.reset();
+        } catch (err) {
+          console.error("Error adding document: ", err);
+          alert("Something went wrong. Check console.");
+        }
+      });
+      // subscribe form submit start
+    </script>    
     
     <script src="./script.js"></script>
   </body>
