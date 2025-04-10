@@ -807,21 +807,21 @@
             <div class="contact-right">
               <form id="contact_form" class="contact-form">
                 <div class="form-row">
-                  <input type="text" placeholder="Name" required />
-                  <input type="tel" placeholder="Phone" required />
+                  <input id="contactName" type="text" placeholder="Name" required />
+                  <input id="contactPhone" type="tel" placeholder="Phone" required />
                 </div>
-                <input type="email" placeholder="Email Address" required />
+                <input id="contactEmail" type="email" placeholder="Email Address" required />
                 <div class="form-row">
-                  <input type="text" placeholder="Business Name" />
-                  <input type="text" placeholder="Nature Of Business" />
+                  <input id="contactBusName" type="text" placeholder="Business Name" />
+                  <input id="contactNatureBus" type="text" placeholder="Nature Of Business" />
                 </div>
-                <select required>
+                <select id="contactService" required>
                   <option value="">-- Select Service --</option>
                   <option value="seo">SEO</option>
                   <option value="smm">Social Media Marketing</option>
                   <!-- Add more options as needed -->
                 </select>
-                <textarea placeholder="Message"></textarea>
+                <textarea id="contactMessage" placeholder="Message"></textarea>
                 <button type="submit">Submit</button>
               </form>
             </div>
@@ -1039,8 +1039,8 @@
       const app = initializeApp(firebaseConfig);
       const db = getFirestore(app);
   
-      // Form submission
-      const form = document.getElementById('hero_quickform');
+      // qucik form submit start
+      const quickForm = document.getElementById('hero_quickform');
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
   
@@ -1058,12 +1058,46 @@
             timestamp: new Date()
           });
           alert("Form submitted successfully!");
-          form.reset();
+          quickForm.reset();
         } catch (err) {
           console.error("Error adding document: ", err);
           alert("Something went wrong. Check console.");
         }
       });
+      // qucik form submit start
+
+
+      // Contact form submit start
+      const contactForm = document.getElementById('contact_form');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+  
+        const contactName = document.getElementById('contactName').value;
+        const contactPhone = document.getElementById('contactPhone').value;
+        const contactEmail = document.getElementById('contactEmail').value;
+        const contactNatureBus = document.getElementById('contactNatureBus').value;
+        const contactService = document.getElementById('contactService').value;
+        const contactMessage = document.getElementById('contactMessage').value;
+  
+        try {
+          await addDoc(collection(db, "landing-page-Contact-form"), {
+            contactName,
+            contactPhone,
+            contactEmail,
+            contactBusName,
+            contactNatureBus,
+            contactService,
+            contactMessage,
+            timestamp: new Date()
+          });
+          alert("Form submitted successfully!");
+          contactForm.reset();
+        } catch (err) {
+          console.error("Error adding document: ", err);
+          alert("Something went wrong. Check console.");
+        }
+      });
+      // qucik form submit start
     </script>
     <script src="./script.js"></script>
   </body>
