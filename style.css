@@ -253,11 +253,11 @@ body {
   max-width: 450px;
   width: 100%;
   margin: auto;
+  border-top: 3px solid #ff7a28;
 }
 
 .hero_form_con h3 {
   width: 100%;
-  border-left: 5px solid #ff7a28;
   padding-left: 20px;
   font-family: "Poppins", sans-serif;
   font-size: 20px;
@@ -540,6 +540,10 @@ body {
   min-height: 250px;
   width: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 #section_5 .sec_5_grid .sec_5_circle .step_img_2 {
   position: absolute;
@@ -586,6 +590,8 @@ body {
   color: #ffffff;
   transition: transform 0.5s ease;
 }
+#section_5 .sec_5_grid .sec_5_circle:hover .step_number_odd,
+#section_5 .sec_5_grid .sec_5_circle:hover .step_number_even,
 #section_5 .sec_5_grid .sec_5_circle .step_number_odd:hover,
 #section_5 .sec_5_grid .sec_5_circle .step_number_even:hover {
   transform: rotate(180deg);
@@ -776,13 +782,32 @@ body {
   max-width: 100%;
   margin: 30px 0;
 }
-
-.contact-footer-text {
+.contact-left .contact_list li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  /* margin-top: 100px; */
+}
+.contact_list li h6 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.contact_list li p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-left: 7px;
+  margin-top: 5px;
+}
+/* .contact-footer-text {
   color: #fcfafd;
   font-family: "Poppins", Sans-serif;
   font-size: 20px;
   font-weight: 600;
-}
+} */
 
 .contact-form {
   display: flex;
@@ -1014,10 +1039,10 @@ footer {
   justify-content: space-between;
 }
 .footer-logo {
-  width: 25%;
+  width: 35%;
 }
 .footer-contact {
-  width: 30%;
+  width: 35%;
 }
 .footer-col {
   width: 21%;
@@ -1219,3 +1244,5 @@ footer {
   /* our client section End  */
 }
 /* Responsive codes End */
+
+/* service_qp2443s form emialjs service id */
