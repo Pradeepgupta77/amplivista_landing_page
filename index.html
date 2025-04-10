@@ -1022,7 +1022,7 @@
     <!-- footer section End -->
 
     <!-- js file -->
-    <script type="module">
+       <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
       import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
   
@@ -1041,7 +1041,7 @@
   
       // qucik form submit start
       const quickForm = document.getElementById('hero_quickform');
-      form.addEventListener('submit', async (e) => {
+      quickForm.addEventListener('submit', async (e) => {
         e.preventDefault();
   
         const quickName = document.getElementById('quickName').value;
@@ -1057,7 +1057,7 @@
             quickMessage,
             timestamp: new Date()
           });
-          alert("Form submitted successfully!");
+          // alert("Form submitted successfully!");
           quickForm.reset();
         } catch (err) {
           console.error("Error adding document: ", err);
@@ -1069,12 +1069,13 @@
 
       // Contact form submit start
       const contactForm = document.getElementById('contact_form');
-      form.addEventListener('submit', async (e) => {
+      contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
   
         const contactName = document.getElementById('contactName').value;
         const contactPhone = document.getElementById('contactPhone').value;
         const contactEmail = document.getElementById('contactEmail').value;
+        const contactBusName = document.getElementById('contactBusName').value;
         const contactNatureBus = document.getElementById('contactNatureBus').value;
         const contactService = document.getElementById('contactService').value;
         const contactMessage = document.getElementById('contactMessage').value;
@@ -1099,6 +1100,55 @@
       });
       // qucik form submit start
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+      emailjs.init("czap2_pd0IMo5f_Lu"); // Replace with your actual Public Key
+    </script>
+
+    <script>
+       <!-- abc  -->
+    
+       const emailquickForm = document.getElementById('hero_quickform');
+       emailquickForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  // const name = document.getElementById('name').value;
+  // const email = document.getElementById('email').value;
+  // const phone = document.getElementById('phone').value;
+  // const message = document.getElementById('message').value;
+  // const service = document.getElementById('service').value;
+  // const time = new Date().toLocaleString(); // human-readable timestamp
+
+  try {
+    // // 1 Save to Firebase Firestore
+    // await addDoc(collection(db, "contacts"), {
+    //   quickName,
+    //   quickEmail,
+    //   quickPhone,
+    //   quickMessage,
+    // });
+
+    // 2️ Send Email via EmailJS
+    await emailjs.send("service_sc2upss", "template_992f4lx", {
+      quickName,
+            quickEmail,
+            quickPhone,
+            quickMessage,
+    });
+
+    alert("Form submitted successfully! We'll get back to you shortly.");
+    emailquickForm.reset();
+  } catch (err) {
+    console.error("Error:", err);
+    alert("Something went wrong. Please try again.");
+  }
+});
+    // <!-- abc  -->
+
+    </script>
+
+    
     <script src="./script.js"></script>
   </body>
 </html>
