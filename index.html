@@ -116,13 +116,14 @@
                 On A Discovery Call
               </h3>
               <form id="hero_quickform" action="#" method="POST">
-                <input type="text" name="name" placeholder="Name" required />
+                <input type="text" name="name" id="quickName" placeholder="Name" required />
 
-                <input type="email" name="email" placeholder="Email" required />
+                <input type="email" name="email" id="quickEmail" placeholder="Email" required />
 
-                <input type="tel" name="phone" placeholder="Phone" required />
+                <input type="tel" name="phone" id="quickPhone" placeholder="Phone" required />
 
                 <textarea
+                  id="quickMessage"
                   name="message"
                   placeholder="Message"
                   rows="4"
@@ -1021,6 +1022,49 @@
     <!-- footer section End -->
 
     <!-- js file -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+      import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+  
+      const firebaseConfig = {
+        apiKey: "AIzaSyDo9IkyF4FFGzuaVuGSnn3Q5nZMvlnoXDk",
+        authDomain: "amplivista-landing-page.firebaseapp.com",
+        projectId: "amplivista-landing-page",
+        storageBucket: "amplivista-landing-page.appspot.com",
+        messagingSenderId: "915033881576",
+        appId: "1:915033881576:web:6e6d801c5a5f13f99e425d"
+      };
+  
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+  
+      // Form submission
+      const form = document.getElementById('hero_quickform');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+  
+        const quickName = document.getElementById('quickName').value;
+        const quickEmail = document.getElementById('quickEmail').value;
+        const quickPhone = document.getElementById('quickPhone').value;
+        const quickMessage = document.getElementById('quickMessage').value;
+  
+        try {
+          await addDoc(collection(db, "landing-page-qucik-form"), {
+            quickName,
+            quickEmail,
+            quickPhone,
+            quickMessage,
+            timestamp: new Date()
+          });
+          alert("Form submitted successfully!");
+          form.reset();
+        } catch (err) {
+          console.error("Error adding document: ", err);
+          alert("Something went wrong. Check console.");
+        }
+      });
+    </script>
     <script src="./script.js"></script>
   </body>
 </html>
