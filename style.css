@@ -679,7 +679,8 @@ body {
   margin-top: 50px;
   display: flex;
   align-items: start;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
   /* background-color: green; */
   /* height: 500px; */
 }
@@ -713,7 +714,7 @@ body {
   color: #e65a12;
 }
 .cash .cash_right {
-  width: 73%;
+  width: 65%;
   height: fit-content;
   /* background-color: rgb(17, 0, 128); */
   margin: 0;
